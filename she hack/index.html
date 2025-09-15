@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SheFinance</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><span class="brand">💎 SheFinance</span></h1>
+    <div class="nav-buttons">
+      <button onclick="toggleForm('signup')">Sign Up</button>
+      <button onclick="toggleForm('login')">Login</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Sign Up Form -->
+    <form id="signup-form" class="auth-form hidden" onsubmit="handleSignup(event)">
+      <h2>Create Account</h2>
+      <input type="text" id="signup-username" placeholder="Username" required />
+      <input type="email" id="signup-email" placeholder="Email" required />
+      <input type="password" id="signup-password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="login-form" class="auth-form hidden" onsubmit="handleLogin(event)">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <!-- Dashboard -->
+  <main id="dashboard" class="hidden">
+    <h2>Welcome to SheFinance 💎</h2>
+    <div class="module-grid">
+      <div class="module">
+        <h3>🧮 Budget Calculator</h3>
+        <form onsubmit="calculateBudget(event)">
+          <input type="number" id="income" placeholder="Monthly Income ₹" required />
+          <input type="number" id="rent" placeholder="Rent/Hostel ₹" required />
+          <input type="number" id="food" placeholder="Food ₹" required />
+          <input type="number" id="transport" placeholder="Transport ₹" required />
+          <input type="number" id="entertainment" placeholder="Entertainment ₹" required />
+          <input type="number" id="other" placeholder="Other ₹" required />
+          <button type="submit">Calculate</button>
+        </form>
+      </div>
+
+      <div id="budget-summary" class="module">
+        <h3>📊 Budget Summary</h3>
+        <p>Enter your details to see your spending breakdown.</p>
+      </div>
+
+      <div id="savings-goal" class="module">
+        <h3>🎯 Savings Goals</h3>
+        <p>Set a goal like ₹5,000/month. If your spending exceeds 80% of income, reduce non-essentials.</p>
+      </div>
+
+      <div id="tips-list" class="module">
+        <h3>💡 Financial Tips</h3>
+        <ul>
+          <li>Use the 50/30/20 rule: 50% needs, 30% wants, 20% savings.</li>
+          <li>Track every rupee—small leaks sink big ships.</li>
+          <li>Set a savings goal and automate it.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
